@@ -56,7 +56,7 @@ precmd(){
 }
 
 PROMPT='
-%{$fg_bold[grey]%}[%*] [%{$reset_color%}%{$fg[green]%}%n%{$reset_color%}%{$fg_bold[grey]%}]:%{$reset_color%}%{$fg_bold[yellow]%}%10c%{$reset_color%} ${vcs_info_msg_0_} $(git_remote_status)
+%(?:%{$fg_bold[grey]%}•:%{$fg_bold[red]%}•) %{$fg_bold[grey]%}[%*] [%{$reset_color%}%{$fg[green]%}%n%{$reset_color%}%{$fg_bold[grey]%}]:%{$reset_color%}%{$fg_bold[yellow]%}%10c%{$reset_color%} ${vcs_info_msg_0_} $(git_remote_status)
 %B%F{black}▶%f%b%F{red}▶%B%F{red}▶%f%b '
 
 local return_status="%{$fg[red]%}%(?..⏎)%{$reset_color%}"
