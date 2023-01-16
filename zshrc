@@ -5,13 +5,18 @@ antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
-antigen bundle command-not-found
 antigen bundle colored-man-pages
+antigen bundle urltools
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-history-substring-search
 #antigen bundle zsh-users/zsh-autosuggestions investigate that one, it looks cool
+
+# nvm, uncomment if needed
+#export NVM_COMPLETION=true
+#export NVM_LAZY_LOAD=true
+#antigen bundle lukechilds/zsh-nvm
 
 # Tell Antigen that you're done.
 antigen apply
@@ -25,7 +30,7 @@ bindkey '^[[B' history-substring-search-down
 #####THEME IMPORTED FROM PREVIOUS ZSHRC
 
 # set some colors
-for COLOR in RED GREEN YELLOW WHITE BLACK CYAN BLUE PURPLE; do
+for COLOR in RED GREEN YELLOW WHITE GREY BLACK CYAN BLUE PURPLE; do
     eval PR_$COLOR='%{$fg[${(L)COLOR}]%}'         
     eval PR_BRIGHT_$COLOR='%{$fg_bold[${(L)COLOR}]%}'
 done                                                 
@@ -63,4 +68,8 @@ local return_status="%{$fg[red]%}%(?..⏎)%{$reset_color%}"
 #RPROMPT='[%*]${return_status}%{$reset_color%}'
 RPROMPT='==========================
 '
+
+export HISTFILE=~/.zsh_history
+export HISTSIZE=500000
+export SAVEHIST=500000
 
